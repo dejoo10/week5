@@ -1,6 +1,7 @@
 # Activity 2:
 
-There are 3 parts in this activity.
+There are 3 parts in this activity. 
+> Start by uploading the [cereal](../datasets/cereal.csv) and [concrete](../datasets/concrete.csv) datasets
 
 ## Part 1/3: Introduction to Keras
 
@@ -33,6 +34,13 @@ concrete_features = concrete_data.drop(columns=['CompressiveStrength'])
 concrete_target = concrete_data['CompressiveStrength']
 ```
 For simplicity, we preprocess each dataset by selecting a subset of features and treating the task as a regression problem. We extract features and target variables from each dataset.
+
+**Split datasets into training and testing sets**
+
+```python
+cereal_X_train, cereal_X_test, cereal_y_train, cereal_y_test = train_test_split(cereal_features, cereal_target, test_size=0.2, random_state=42)
+concrete_X_train, concrete_X_test, concrete_y_train, concrete_y_test = train_test_split(concrete_features, concrete_target, test_size=0.2, random_state=42)
+```
 
 4. **Define the Model**:
 ```python
