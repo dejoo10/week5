@@ -130,15 +130,7 @@ model.compile(optimizer='adam',
 early_stopping = EarlyStopping(monitor='val_loss', patience=3, verbose=1, restore_best_weights=True)
 ```
 
-Step 5: **Define Early Stopping Callback**
-
 In this step, we define an early stopping callback using Keras' `EarlyStopping` class. The purpose of this callback is to monitor the validation loss during training and stop the training process when the validation loss stops improving. 
-
-```python
-early_stopping = EarlyStopping(monitor='val_loss', patience=3, verbose=1, restore_best_weights=True)
-```
-
-Let's break down what each parameter in the `EarlyStopping` callback does:
 
 - **monitor**: This parameter specifies the quantity to be monitored during training. In this case, we set it to `'val_loss'`, indicating that we want to monitor the validation loss.
 
